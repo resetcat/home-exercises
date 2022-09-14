@@ -7,7 +7,7 @@ public class PhoneKeyPad {
         Scanner scan = new Scanner(System.in);
         String input = scan.next().toLowerCase();
 
-        if (input.matches("[a-zA-Z]+")){
+        if (input.matches("[a-zA-Z]+")) {
             char[] chars = input.toCharArray();
             for (char aChar : chars) {
                 switch (aChar) {
@@ -21,8 +21,7 @@ public class PhoneKeyPad {
                     default -> System.out.print(9);
                 }
             }
-        }
-        else System.out.println("Enter valid text");
+        } else System.out.println("Enter valid text");
 
 
     }

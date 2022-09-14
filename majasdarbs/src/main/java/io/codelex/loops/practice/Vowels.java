@@ -8,10 +8,9 @@ public class Vowels {
 
 
 //        todo - use for
-        for (int i = 0;i<vowels.length;i++) {
+        for (int i = 0; i < vowels.length; i++) {
             System.out.println(vowels[i]);
         }
-
 
 
 //        todo - use foreach

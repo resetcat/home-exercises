@@ -9,11 +9,10 @@ public class Print2Words {
         String first = scan.nextLine();
         System.out.println("Enter second word:");
         String second = scan.nextLine();
-        int padLenght = 30-(first.length()+second.length());
+        int padLenght = 30 - (first.length() + second.length());
         String dots = "";
         String padding = String.format("%-" + padLenght + "s", dots).replace(" ", ".");
-        System.out.println(first +padding+second);
-
+        System.out.println(first + padding + second);
 
 
     }

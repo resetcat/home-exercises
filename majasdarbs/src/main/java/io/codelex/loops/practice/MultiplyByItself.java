@@ -13,8 +13,8 @@ public class MultiplyByItself {
 
 
 //        todo - complete loop to multiply i with itself n times, it is NOT allowed to use Math.pow()
-        for (i=1; i<=n;i++) {
-          System.out.println(i*i);
+        for (i = 1; i <= n; i++) {
+            System.out.println(i * i);
         }
 
     }

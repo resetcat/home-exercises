@@ -3,7 +3,7 @@ package io.codelex.flowcontrol.practice;
 public class PrintDayInWord {
     public static void main(String[] args) {
         int dayNumber = 0;
-        if (dayNumber>6 || dayNumber<0){
+        if (dayNumber > 6 || dayNumber < 0) {
             System.out.println("Not a valid day.");
         }
         switch (dayNumber) {

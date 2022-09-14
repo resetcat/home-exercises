@@ -14,8 +14,8 @@ public class NumberSquare {
             max = scan.nextInt();
         }
         for (int i = min; i <= max; i++) {
-                for (int j = i; j < max + i; j++) {
-                    System.out.print((j - 1) % max + 1);
+            for (int j = i; j < max + i; j++) {
+                System.out.print((j - 1) % max + 1);
             }
             System.out.println();
         }

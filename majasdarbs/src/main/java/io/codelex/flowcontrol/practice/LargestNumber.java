@@ -23,7 +23,7 @@ public class LargestNumber {
         Input the 2nd number: 78
         Input the 3rd number: 87
          */
-        System.out.println("Largest number is "+ Math.max(num1, Math.max(num2,num3)));
+        System.out.println("Largest number is " + Math.max(num1, Math.max(num2, num3)));
     }
 
 }

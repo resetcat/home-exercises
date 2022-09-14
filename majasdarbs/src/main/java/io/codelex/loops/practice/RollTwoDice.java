@@ -10,16 +10,15 @@ public class RollTwoDice {
         int desNum = scan.nextInt();
         int sum = 0;
 
-            while(!(desNum>1&&desNum<=12)) {
-                System.out.println("Your number must be from 2 to 12!");
-                desNum = scan.nextInt();
-            }
-        roll2dice(desNum,sum);
-
-
+        while (!(desNum > 1 && desNum <= 12)) {
+            System.out.println("Your number must be from 2 to 12!");
+            desNum = scan.nextInt();
+        }
+        roll2dice(desNum, sum);
 
 
     }
+
     public static int rollDice() {
         return (int) ((Math.random() * 6) + 1);
     }
