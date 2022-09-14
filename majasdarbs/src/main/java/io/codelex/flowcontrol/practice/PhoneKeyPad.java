@@ -21,7 +21,9 @@ public class PhoneKeyPad {
                     default -> System.out.print(9);
                 }
             }
-        } else System.out.println("Enter valid text");
+        } else {
+            System.out.println("Enter valid text");
+        }
 
 
     }
