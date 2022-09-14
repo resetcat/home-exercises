@@ -11,9 +11,10 @@ public class SadFor {
 //fixme
         int num = 0;
         for (int i = 0; i < 10; i++) {
-            if (Math.sqrt(i) > 2.5)
+            if (Math.sqrt(i) > 2.5) {
                 break;
-            num = i+1;
+            }
+            num = i + 1;
         }
 
         return num;

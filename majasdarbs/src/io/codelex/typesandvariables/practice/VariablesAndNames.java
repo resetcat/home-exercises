@@ -3,14 +3,14 @@ package io.codelex.typesandvariables.practice;
 public class VariablesAndNames {
     public static void main(String[] args) {
 
-       int cars = 100;
-       int seatsInACar = 4;
-       int drivers = 30;
-       int passengers = 90;
-       int carsNotDriven = cars - drivers;
-       int carsDriven = drivers;
-       int carpoolCapacity = carsDriven * seatsInACar;
-       double averagePassengersPerCar = passengers / carsDriven;
+        int cars = 100;
+        int seatsInACar = 4;
+        int drivers = 30;
+        int passengers = 90;
+        int carsNotDriven = cars - drivers;
+        int carsDriven = drivers;
+        int carpoolCapacity = carsDriven * seatsInACar;
+        double averagePassengersPerCar = passengers / carsDriven;
 
         System.out.println("There are " + cars + " cars available.");
         System.out.println("There are only " + drivers + " drivers available.");

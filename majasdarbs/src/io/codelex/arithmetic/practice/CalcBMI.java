@@ -10,7 +10,6 @@ public class CalcBMI {
         while (measureSys != 1 && measureSys != 2) {
             System.out.println("wrong input! You must write number 1 or 2!");
             measureSys = scan.nextByte();
-//            scan.close();
         }
         System.out.println("Enter your weight in " + (measureSys == 1 ? "kg" : "lb"));
         int weight = scan.nextInt();

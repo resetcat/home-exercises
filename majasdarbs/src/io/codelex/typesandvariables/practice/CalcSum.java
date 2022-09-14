@@ -8,7 +8,7 @@ public class CalcSum {
         int sum1 = scan.nextInt();
         int sum2 = scan.nextInt();
 
-        System.out.println("Sum of "+sum1+" and "+sum2+" is "+ (sum1+sum2));
+        System.out.println("Sum of " + sum1 + " and " + sum2 + " is " + (sum1 + sum2));
 
     }
 }

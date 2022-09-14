@@ -12,8 +12,9 @@ public class GuessRandom {
 
         if (random == guess) {
             System.out.println("You guessed it!  What are the odds?!?");
-        } else
+        } else {
             System.out.println("Sorry, you are too " + (guess > random ? "high" : "low") + ".  I was thinking of " + random + ".");
+        }
 
     }
 }
