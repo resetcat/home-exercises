@@ -5,24 +5,28 @@ import java.util.Scanner;
 public class Hangman {
     public static String[] words = {"Bird", "Man", "Carzzz"};
     public static boolean win = false;
+    public static boolean playing = true;
 
 
     public static void main(String[] args) {
-        String word = words[random(words.length)].toLowerCase();
-        String[] wordArr = word.split("");
-        char[] hidden = word.replaceAll(".", "_").toCharArray();
-        StringBuilder misses = new StringBuilder("");
+        while (playing) {
+            String word = words[random(words.length)].toLowerCase();
+            String[] wordArr = word.split("");
+            char[] hidden = word.replaceAll(".", "_").toCharArray();
+            StringBuilder misses = new StringBuilder("");
 
 
-        Scanner scan = new Scanner(System.in);
+            Scanner scan = new Scanner(System.in);
 
-        while (!win) {
-            drawGame(hidden, misses);
-            System.out.print("Guess :");
-            String letter = scan.nextLine().toLowerCase();
-            checkLetter(ifValid(letter), wordArr, hidden, misses);
+            while (!win) {
+                drawGame(hidden, misses);
+                System.out.print("Guess :");
+                String letter = scan.nextLine().toLowerCase();
+                checkLetter(ifValid(letter), wordArr, hidden, misses);
 
 
+            }
+            newGame();
         }
     }
 
@@ -33,13 +37,13 @@ public class Hangman {
         while (true) {
             if (answer.equals("again")) {
                 System.out.println();
-                Hangman.main(null);
+                win = false;
 
 
                 break;
             }
             if (answer.equals("quit")) {
-                System.exit(0);
+                playing = false;
                 break;
             }
         }
@@ -56,12 +60,11 @@ public class Hangman {
     }
 
 
-    public static boolean checkWin(StringBuilder misses, char[] hidden) {
+    public static void checkWin(StringBuilder misses, char[] hidden) {
         int count = 0;
         if (misses.length() > 4) {
             System.out.println("You lost the game");
-            newGame();
-            return win = true;
+            win = true;
         }
         for (char c : hidden) {
 
@@ -71,12 +74,10 @@ public class Hangman {
             if (count == hidden.length) {
                 drawGame(hidden, misses);
                 System.out.println("YOU GOT IT!");
-                newGame();
-                return win = true;
+                win = true;
             }
         }
 
-        return win = false;
     }
 
     public static void checkLetter(String letter, String[] arr, char[] hidden, StringBuilder misses) {

@@ -33,34 +33,30 @@ public class TicTacToe {
 
     }
 
+    public static void win() {
+        winner = true;
+        System.out.println("The winner is player " + player);
+    }
+
     public static void checkWinner(char player) {
 
 
         if (board[0][0] == player && board[0][1] == player && board[0][2] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
+            win();
         } else if (board[0][0] == player && board[1][0] == player && board[2][0] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
+            win();
         } else if (board[0][0] == player && board[1][1] == player && board[2][2] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
+            win();
         } else if (board[1][0] == player && board[1][1] == player && board[1][2] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
+            win();
         } else if (board[2][0] == player && board[2][1] == player && board[2][2] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
+            win();
         } else if (board[2][0] == player && board[1][1] == player && board[0][2] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
-
+            win();
         } else if (board[0][1] == player && board[1][1] == player && board[2][1] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
+            win();
         } else if (board[0][2] == player && board[1][2] == player && board[2][2] == player) {
-            winner = true;
-            System.out.println("The winner is player " + player);
+            win();
         } else if (TicTacToe.turnCount >= 9 && !winner) {
             System.out.println("The game is a tie.");
             winner = true;
