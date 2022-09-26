@@ -1,5 +1,7 @@
 package io.codelex.arrays.practice;
 
+import java.util.Random;
+
 public class Exercise6 {
     public static void main(String[] args) {
         int[] arr = new int[10];
@@ -22,7 +24,8 @@ public class Exercise6 {
     }
 
     public static int random(int max) {
-        return (int) ((Math.random() * max) + 1);
+        Random random = new Random();
+        return random.nextInt(max) + 1;
     }
 
 }

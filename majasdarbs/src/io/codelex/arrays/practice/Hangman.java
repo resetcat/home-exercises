@@ -1,5 +1,6 @@
 package io.codelex.arrays.practice;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Hangman {
@@ -111,6 +112,7 @@ public class Hangman {
     }
 
     public static int random(int max) {
-        return (int) ((Math.random() * max));
+        Random random = new Random();
+        return random.nextInt(max);
     }
 }
