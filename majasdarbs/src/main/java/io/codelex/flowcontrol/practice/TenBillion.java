@@ -13,7 +13,7 @@ public class TenBillion {
 
 
 //        todo - check if Long
-        if (n == (long) n) {
+        if (((Object) n).getClass().getSimpleName().equals("Long")) {
 //            todo - check if n is less than zero
             if (n < 0) {
                 n *= -1;
@@ -25,21 +25,21 @@ public class TenBillion {
                 int digits = 1;
                 if (n <= 99 && n >= 10) {
                     digits = 2;
-                } else if (n > 99 && n <= 999) {
+                } else if (n <= 999) {
                     digits = 3;
-                } else if (n > 999 && n <= 9999) {
+                } else if (n <= 9999) {
                     digits = 4;
-                } else if (n > 9999 && n <= 99999) {
+                } else if (n <= 99999) {
                     digits = 5;
-                } else if (n > 99999 && n <= 999999) {
+                } else if (n <= 999999) {
                     digits = 6;
-                } else if (n > 999999 && n <= 9999999) {
+                } else if (n <= 9999999) {
                     digits = 7;
-                } else if (n > 9999999 && n <= 99999999) {
+                } else if (n <= 99999999) {
                     digits = 8;
-                } else if (n > 99999999 && n <= 999999999) {
+                } else if (n <= 999999999) {
                     digits = 9;
-                } else if (n > 999999999) {
+                } else {
                     digits = 10;
                 }
                 System.out.println("Number of digits in the number: " + digits);

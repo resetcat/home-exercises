@@ -1,5 +1,6 @@
 package io.codelex.loops.practice;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Piglet {
@@ -13,7 +14,7 @@ public class Piglet {
 
         while (result < 21) {
             System.out.println("Roll again ? y/n");
-            String answer = scan.nextLine();
+            String answer = scan.nextLine().toLowerCase();
             switch (answer) {
                 case "y", "yes":
                     result += rollDice();
@@ -35,8 +36,9 @@ public class Piglet {
     }
 
 
-    public static int rollDice() {
-        int dice = (int) ((Math.random() * 6) + 1);
+    private static int rollDice() {
+        Random ran = new Random();
+        int dice = ran.nextInt(6) + 1;
         System.out.println("You rolled " + dice + "!");
         if (dice == 1) {
             System.out.println("you lost the game");

@@ -1,5 +1,6 @@
 package io.codelex.loops.practice;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class RollTwoDice {
@@ -19,8 +20,9 @@ public class RollTwoDice {
 
     }
 
-    public static int rollDice() {
-        return (int) ((Math.random() * 6) + 1);
+    private static int rollDice() {
+        Random random = new Random();
+        return random.nextInt(6) + 1;
     }
 
     public static void roll2dice(int desNum, int sum) {
