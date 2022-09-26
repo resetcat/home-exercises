@@ -23,7 +23,7 @@ public class Exercise6 {
 
     }
 
-    public static int random(int max) {
+    private static int random(int max) {
         Random random = new Random();
         return random.nextInt(max) + 1;
     }

@@ -16,7 +16,7 @@ public class LitersPerKilometer {
     }
 
 
-    public static Car setCar() {
+    private static Car setCar() {
         Scanner scan = new Scanner(System.in);
 
         double startKm;

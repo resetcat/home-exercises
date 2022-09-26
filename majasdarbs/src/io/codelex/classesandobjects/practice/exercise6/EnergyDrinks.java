@@ -12,11 +12,11 @@ public class EnergyDrinks {
         System.out.println(calculatePreferCitrus(NUMBERED_SURVEYED) + " of those " + "prefer citrus flavored energy drinks.");
     }
 
-    public static int calculateEnergyDrinkers(int numberSurveyed) {
+    private static int calculateEnergyDrinkers(int numberSurveyed) {
         return (int) (numberSurveyed * PURCHASED_ENERGY_DRINKS);
     }
 
-    public static int calculatePreferCitrus(int numberSurveyed) {
+    private static int calculatePreferCitrus(int numberSurveyed) {
         return (int) (calculateEnergyDrinkers(numberSurveyed) * PREFER_CITRUS_DRINKS);
 
     }

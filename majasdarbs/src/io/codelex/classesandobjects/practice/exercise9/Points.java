@@ -4,16 +4,16 @@ public class Points {
     private int x;
     private int y;
 
-    public Points(int x, int y) {
+    private Points(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public void setX(int x) {
+    private void setX(int x) {
         this.x = x;
     }
 
-    public void setY(int y) {
+    private void setY(int y) {
         this.y = y;
     }
 
@@ -27,7 +27,7 @@ public class Points {
         System.out.println("(" + p2.x + ", " + p2.y + ")");
     }
 
-    public static void swapPoints(Points p1, Points p2) {
+    private static void swapPoints(Points p1, Points p2) {
         int temp = p1.x;
         int temp1 = p1.y;
         p1.x = p2.x;

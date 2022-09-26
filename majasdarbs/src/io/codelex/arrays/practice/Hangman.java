@@ -31,7 +31,7 @@ public class Hangman {
         }
     }
 
-    public static void newGame() {
+    private static void newGame() {
         System.out.print("Play \"again\" or \"quit\"?");
         Scanner third = new Scanner(System.in);
         String answer = third.nextLine();
@@ -51,7 +51,7 @@ public class Hangman {
     }
 
 
-    public static String ifValid(String letter) {
+    private static String ifValid(String letter) {
         if (letter.length() > 1 || letter.matches("[^a-z]")) {
             System.out.println("You need to enter valid 1 letter!");
             Scanner x = new Scanner(System.in);
@@ -61,7 +61,7 @@ public class Hangman {
     }
 
 
-    public static void checkWin(StringBuilder misses, char[] hidden) {
+    private static void checkWin(StringBuilder misses, char[] hidden) {
         int count = 0;
         if (misses.length() > 4) {
             System.out.println("You lost the game");
@@ -81,7 +81,7 @@ public class Hangman {
 
     }
 
-    public static void checkLetter(String letter, String[] arr, char[] hidden, StringBuilder misses) {
+    private static void checkLetter(String letter, String[] arr, char[] hidden, StringBuilder misses) {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i].equals(letter)) {
@@ -96,13 +96,13 @@ public class Hangman {
 
     }
 
-    public static void printArrey(char[] arr) {
+    private static void printArrey(char[] arr) {
         for (char ch : arr) {
             System.out.print(ch + " ");
         }
     }
 
-    public static void drawGame(char[] hidden, StringBuilder misses) {
+    private static void drawGame(char[] hidden, StringBuilder misses) {
         System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         System.out.print("Word:   ");
         printArrey(hidden);
@@ -111,7 +111,7 @@ public class Hangman {
 
     }
 
-    public static int random(int max) {
+    private static int random(int max) {
         Random random = new Random();
         return random.nextInt(max);
     }

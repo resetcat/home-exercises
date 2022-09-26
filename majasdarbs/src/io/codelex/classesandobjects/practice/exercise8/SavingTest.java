@@ -10,7 +10,7 @@ public class SavingTest {
 
     }
 
-    public static SavingsAccount newAcc() {
+    private static SavingsAccount newAcc() {
         Scanner scan = new Scanner(System.in);
         System.out.println("How much money is in the account?");
         double balance = scan.nextDouble();
