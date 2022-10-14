@@ -8,7 +8,7 @@ public class CreditCard extends Card {
 
     @Override
     public void addFunds(double amount) {
-        setBalance(amount);
+        setBalance(getBalance() + amount);
     }
 
     @Override
@@ -17,9 +17,9 @@ public class CreditCard extends Card {
             throw new NotEnoughFundsException("its not possible to take out the amount you are requesting");
         } else if (getBalance() <= 100) {
             System.out.println("Warning: Low funds");
-            setBalance(-amount);
+            setBalance(getBalance() - amount);
         } else {
-            setBalance(-amount);
+            setBalance(getBalance() - amount);
         }
     }
 }

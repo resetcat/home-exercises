@@ -11,8 +11,9 @@ public class DebitCard extends Card {
     public void addFunds(double amount) {
         if (getBalance() > 10_000) {
             System.out.println("Warning: Too much money");
+            setBalance(getBalance() + amount);
         }
-        setBalance(amount);
+        setBalance(getBalance() + amount);
     }
 
     @Override
@@ -20,7 +21,7 @@ public class DebitCard extends Card {
         if (amount > getBalance()) {
             throw new NotEnoughFundsException("its not possible to take out the amount you are requesting");
         } else {
-            setBalance(-amount);
+            setBalance(getBalance() - amount);
         }
 
     }
