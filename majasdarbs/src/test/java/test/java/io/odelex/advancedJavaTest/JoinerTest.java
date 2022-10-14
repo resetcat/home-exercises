@@ -4,14 +4,21 @@ import io.codelex.advancedJavaTest.exercise3.Joiner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JoinerTest {
 
 //    static<T> String joinMethod(List<T> list, String separator, )
 
     @Test
     void testIntegerJoining() {
-        Joiner integerJoiner = new Joiner(1, "-", (a, b) -> a.toString() + b);
+        List<Integer> ints = new ArrayList<>();
+        ints.add(1);
+        ints.add(3);
+        ints.add(4);
+        Joiner integerJoiner = new Joiner(ints, "-", (lsit, sep) -> lsit.toString() + sep);
         String result = integerJoiner.join();
-        Assertions.assertEquals("1-", result);
+        Assertions.assertEquals("1-3-4", result);
     }
 }
