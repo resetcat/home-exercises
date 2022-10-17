@@ -5,6 +5,9 @@ public class Car {
     private double endKm;
     private double litres;
 
+    private boolean isEconomyCar = calcFuelConsumption() < 5;
+    private boolean isGasHog = calcFuelConsumption() > 15;
+
     public Car(double startKm, double endKm, double litres) {
         this.startKm = startKm;
         this.endKm = endKm;
@@ -28,17 +31,10 @@ public class Car {
         return Math.floor((litres / (endKm - startKm) * 100) * 100) / 100;
     }
 
-    public boolean gasHog() {
-        return calcFuelConsumption() > 15;
-    }
-
-    public boolean economyCar() {
-        return calcFuelConsumption() < 5;
-    }
-
     public void printCar() {
-        System.out.println("Litres per 100km is " + this.calcFuelConsumption() +
-                (this.gasHog() ? " you car is a gas hog!" : this.economyCar() ? " your car is economy!" : ""));
+        System.out.println("Litres per 100km is " + this.calcFuelConsumption() + (isGasHog ?
+                " you car is a gas hog!" :
+                isEconomyCar ? " your car is economy!" : ""));
     }
 
 }

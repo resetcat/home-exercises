@@ -6,8 +6,8 @@ public class LitersPerKilometer {
     public static void main(String[] args) {
 
 
-        Car car = setCar();
-        Car car1 = setCar();
+        Car car = createCar();
+        Car car1 = createCar();
         Car car2 = new Car(0);
         car.printCar();
         car1.printCar();
@@ -16,7 +16,7 @@ public class LitersPerKilometer {
     }
 
 
-    private static Car setCar() {
+    private static Car createCar() {
         Scanner scan = new Scanner(System.in);
 
         double startKm;

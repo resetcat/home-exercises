@@ -7,8 +7,8 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 public class BankAccount {
-    public String name;
-    public double balance;
+    private String name;
+    private double balance;
 
     NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(new Locale("en", "US"));
 
