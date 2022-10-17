@@ -17,8 +17,8 @@ public class JoinerTest {
         ints.add(1);
         ints.add(3);
         ints.add(4);
-        Joiner integerJoiner = new Joiner(ints, "-", (lsit, sep) -> lsit.toString() + sep);
-        String result = integerJoiner.join();
+        Joiner integerJoiner = new Joiner("-");
+        String result = integerJoiner.join(ints);
         Assertions.assertEquals("1-3-4", result);
     }
 }

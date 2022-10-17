@@ -9,11 +9,10 @@ public class DebitCard extends Card {
 
     @Override
     public void addFunds(double amount) {
+        setBalance(getBalance() + amount);
         if (getBalance() > 10_000) {
             System.out.println("Warning: Too much money");
-            setBalance(getBalance() + amount);
         }
-        setBalance(getBalance() + amount);
     }
 
     @Override

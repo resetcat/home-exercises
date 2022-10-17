@@ -1,22 +1,19 @@
 package io.codelex.advancedJavaTest.exercise3;
 
 import java.util.List;
-import java.util.function.BiFunction;
+import java.util.stream.Collectors;
 
 public class Joiner<T> {
-    private List<T> thing;
+
     private String separator;
 
-    private BiFunction<List<T>, String, String> joiner;
 
-    public Joiner(List<T> thing, String separator, BiFunction<List<T>, String, String> joiner) {
-        this.thing = thing;
+    public Joiner(String separator) {
         this.separator = separator;
-        this.joiner = joiner;
     }
 
-    public String join() {
-        return joiner.apply(thing, separator);
+    public <E> String join(List<E> list) {
+        return list.stream().map(Object::toString).collect(Collectors.joining(separator));
     }
 }
 
