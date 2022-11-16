@@ -21,8 +21,8 @@ public class CarMain {
 
         CarService carService = new CarService();
         carService.addCar(x5, golf, lexusLS, t70, rafik);
-        System.out.println(carService.getV12().size());
-        System.out.println(carService.get1999().size());
+        System.out.println(carService.getCarByEngineType(Engine.V12).size());
+        System.out.println(carService.getCarByYear(1999).size());
         System.out.println(carService.getCarList().size());
         System.out.println(carService.getExpensiveCar());
         System.out.println(carService.getCheapCar());
@@ -34,7 +34,8 @@ public class CarMain {
         carService.removeCar(rafik);
         System.out.println(carService.hasCar(rafik));
         System.out.println(carService.getCarByManufacturer(raf).size());
-        System.out.println(carService.getCarByManufactorYearRange(volkswagenGroup, 1999, Range.EQUALS).size());
+        System.out.println(
+                carService.getCarByManufactorYearRange(volkswagenGroup, 1999, Range.EQUALS).size());
 
     }
 }

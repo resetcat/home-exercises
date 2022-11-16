@@ -8,6 +8,7 @@ public class WorkTime {
 
     public void calcHours(LocalDate start, LocalDate end) {
         int days = 0;
+        int workingHours = 8;
         LocalDate realStart = start;
         while (!start.equals(end)) {
             if (!start.getDayOfWeek().name().equals("SATURDAY") &&
@@ -16,7 +17,9 @@ public class WorkTime {
             }
             start = start.plusDays(1);
         }
-        System.out.println("From " + realStart + " to " + end + " you have worked " + (days * 8) + " hours!");
+        System.out.println(
+                "From " + realStart + " to " + end + " you have worked " + (days * workingHours) +
+                        " hours!");
     }
 
 

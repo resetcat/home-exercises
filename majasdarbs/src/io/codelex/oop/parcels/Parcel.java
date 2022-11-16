@@ -2,36 +2,36 @@ package io.codelex.oop.parcels;
 
 public class Parcel implements Validatable {
 
-    private int xLenght;
-    private int yLenght;
-    private int zLenght;
-    private float weight;
-    private boolean isExpress;
+    private final int xLength;
+    private final int yLength;
+    private final int zLength;
+    private final float weight;
+    private boolean isExpress = true;
 
-    public Parcel(int xLenght, int yLenght, int zLenght, float weight) {
-        this.xLenght = xLenght;
-        this.yLenght = yLenght;
-        this.zLenght = zLenght;
+    public Parcel(int xLength, int yLength, int zLength, float weight) {
+        this.xLength = xLength;
+        this.yLength = yLength;
+        this.zLength = zLength;
         this.weight = weight;
-        this.isExpress = false;
     }
 
     @Override
     public boolean validate() {
-        int errorCount = 0;
-        if (xLenght + yLenght + zLenght >= 300) {
-            errorCount++;
+        int maxTotalSize = 300;
+        int maxLength = 30;
+        int maxWeight = 30;
+        if (xLength + yLength + zLength >= maxTotalSize) {
+            isExpress = false;
             System.out.println("Your parcel is too large!");
-        } else if (xLenght < 30 || yLenght < 30 || zLenght < 30) {
-            errorCount++;
+        } else if (xLength < maxLength || yLength < maxLength || zLength < maxLength) {
+            isExpress = false;
             System.out.println("Parcel is too small! Size should be at least 30x30x30");
         }
-        if (weight > 30) {
-            errorCount++;
+        if (weight > maxWeight) {
+            isExpress = false;
             System.out.println("Your parcel is too heavy! Maximum weight is 30kg!");
         }
-        if (errorCount == 0) {
-            isExpress = true;
+        if (isExpress) {
             System.out.println("Your parcel can be sent by express mail!");
         }
 

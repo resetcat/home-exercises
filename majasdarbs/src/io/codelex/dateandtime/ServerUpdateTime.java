@@ -7,17 +7,18 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ServerUpdateTime {
-    private static final LocalDate launchDate = LocalDate.of(2021, Month.SEPTEMBER, 5);
+    private static final LocalDate LAUNCH_DATE = LocalDate.of(2021, Month.SEPTEMBER, 5);
 
     public static String updateDaysInMonth(int year, Month month) {
         LocalDate date = LocalDate.of(year, month, month.maxLength());
-        LocalDate updates = launchDate;
-        if (date.isBefore(launchDate)) {
+        LocalDate updates = LAUNCH_DATE;
+        if (date.isBefore(LAUNCH_DATE)) {
             return "You must enter date which is after server launch!";
         }
         List<LocalDate> updateDates = new ArrayList<>();
         while (updates.isBefore(date)) {
-            updates = updates.plusDays(14);
+            int twoWeeks = 14;
+            updates = updates.plusDays(twoWeeks);
             updateDates.add(updates);
         }
         List<LocalDate> updateMonth = new ArrayList<>();

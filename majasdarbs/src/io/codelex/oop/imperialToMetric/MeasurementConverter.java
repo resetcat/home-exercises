@@ -4,7 +4,7 @@ public class MeasurementConverter {
 
     private int value;
 
-    ConversionType conversionType;
+    private ConversionType conversionType;
 
     public MeasurementConverter(int value, ConversionType conversionType) {
         this.value = value;
@@ -12,8 +12,9 @@ public class MeasurementConverter {
     }
 
     public void getConvertedValue() {
-        System.out.println("Converting " + value + " " + conversionType.name().toLowerCase().replaceAll("_", " ")
-                + " is " + (int) (conversionType.converter * value));
+        System.out.println("Converting " + value + " " +
+                                   conversionType.name().toLowerCase().replaceAll("_", " ") +
+                                   " is " + (int) (conversionType.converter * value));
     }
 
     public int getValue() {

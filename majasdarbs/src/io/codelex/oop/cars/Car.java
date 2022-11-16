@@ -10,7 +10,7 @@ public class Car {
     private int price;
     private int yearOfManufacture;
     private List<Manufacturer> ManufacturerList = new ArrayList<>();
-    Engine engine;
+    private Engine engine;
 
     public Car(String name, String model, int price, int yearOfManufacture, Engine engine) {
         this.name = name;
@@ -30,7 +30,9 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" + "name='" + name + '\'' + ", model='" + model + '\'' + ", price=" + price + ", yearOfManufacture=" + yearOfManufacture + ", ManufacturerList=" + ManufacturerList + ", engine=" + engine + '}';
+        return "Car{" + "name='" + name + '\'' + ", model='" + model + '\'' + ", price=" + price +
+                ", yearOfManufacture=" + yearOfManufacture + ", ManufacturerList=" +
+                ManufacturerList + ", engine=" + engine + '}';
     }
 
     public String getName() {

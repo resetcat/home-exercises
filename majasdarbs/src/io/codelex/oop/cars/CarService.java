@@ -20,12 +20,12 @@ public class CarService {
         return carList;
     }
 
-    public List<Car> getV12() {
-        return carList.stream().filter(car -> car.engine.equals(Engine.V12)).toList();
+    public List<Car> getCarByEngineType(Engine type) {
+        return carList.stream().filter(car -> car.getEngine().equals(type)).toList();
     }
 
-    public List<Car> get1999() {
-        return carList.stream().filter(car -> car.getYearOfManufacture() < 1999).toList();
+    public List<Car> getCarByYear(int year) {
+        return carList.stream().filter(car -> car.getYearOfManufacture() < year).toList();
     }
 
     public Car getExpensiveCar() {
@@ -54,24 +54,38 @@ public class CarService {
     }
 
     public List<Car> getCarByManufacturer(Manufacturer manufacturer) {
-        return carList.stream().filter(car -> car.getManufacturerList().contains(manufacturer)).toList();
+        return carList.stream()
+                      .filter(car -> car.getManufacturerList().contains(manufacturer))
+                      .toList();
     }
 
     public List<Car> getCarByManufactorYearRange(Manufacturer manufacturer, int year, Range range) {
         List<Car> madeInFactory = getCarByManufacturer(manufacturer);
         switch (range) {
-            case GREATER_THAN ->
-                    madeInFactory = madeInFactory.stream().filter(car -> car.getYearOfManufacture() > year).toList();
-            case GREATER_THAN_OR_EQUALS ->
-                    madeInFactory = madeInFactory.stream().filter(car -> car.getYearOfManufacture() >= year).toList();
-            case SMALLER_THAN ->
-                    madeInFactory = madeInFactory.stream().filter(car -> car.getYearOfManufacture() < year).toList();
-            case SMALLER_THAN_OR_EQUALS ->
-                    madeInFactory = madeInFactory.stream().filter(car -> car.getYearOfManufacture() <= year).toList();
-            case EQUALS ->
-                    madeInFactory = madeInFactory.stream().filter(car -> car.getYearOfManufacture() == year).toList();
-            case NOT_EQUALS ->
-                    madeInFactory = madeInFactory.stream().filter(car -> car.getYearOfManufacture() != year).toList();
+            case GREATER_THAN -> madeInFactory = madeInFactory.stream()
+                                                              .filter(car -> car.getYearOfManufacture() >
+                                                                      year)
+                                                              .toList();
+            case GREATER_THAN_OR_EQUALS -> madeInFactory = madeInFactory.stream()
+                                                                        .filter(car -> car.getYearOfManufacture() >=
+                                                                                year)
+                                                                        .toList();
+            case SMALLER_THAN -> madeInFactory = madeInFactory.stream()
+                                                              .filter(car -> car.getYearOfManufacture() <
+                                                                      year)
+                                                              .toList();
+            case SMALLER_THAN_OR_EQUALS -> madeInFactory = madeInFactory.stream()
+                                                                        .filter(car -> car.getYearOfManufacture() <=
+                                                                                year)
+                                                                        .toList();
+            case EQUALS -> madeInFactory = madeInFactory.stream()
+                                                        .filter(car -> car.getYearOfManufacture() ==
+                                                                year)
+                                                        .toList();
+            case NOT_EQUALS -> madeInFactory = madeInFactory.stream()
+                                                            .filter(car -> car.getYearOfManufacture() !=
+                                                                    year)
+                                                            .toList();
         }
         return madeInFactory;
     }
